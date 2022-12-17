@@ -13,15 +13,31 @@
 
 0. Ensure image to caption is saved (i.e. save output from LIME)
 1. ``pip install -r git2-reqs.txt``
-2. ``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
-      'image_path': 'PATH_TO_IMG' \
-            'model_name': 'GIT_BASE', \
-	          'prefix': '', \
-	  }"``
-3. For multiple (n) images, ``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
-      'image_path': ['PATH_TO_IMG_1', ... 'PATH_TO_IMG_N']\
-            'model_name': 'GIT_BASE_VATEX', \
-	          'prefix': '', \
-	  }"``
+2. ``python setup.py build develop``
+3. ``cd GenerativeImage2Text``
 
-4. Final output should be caption
+4a. For one image,
+ 		
+		``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
+      		
+		'image_path': 'PATH_TO_IMG' \
+            	
+		'model_name': 'GIT_BASE', \
+	        
+		'prefix': '', \
+	  	
+		}"``
+	  
+4b. For multiple (n) images, 
+
+		``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
+     		
+		'image_path': ['PATH_TO_IMG_1', ... 'PATH_TO_IMG_N']\
+        	
+		'model_name': 'GIT_BASE_VATEX', \
+	        
+		'prefix': '', \
+	  	
+		}"``
+
+5. Final output should be caption
