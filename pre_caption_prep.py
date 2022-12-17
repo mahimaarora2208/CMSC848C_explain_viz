@@ -37,16 +37,21 @@ def get_crops(img_path, crop, denom, rand_number):
 def save_crops(crops, img_name, parent_dir):
     new_dir = os.path.join(parent_dir, img_name)
     os.mkdir(new_dir)
+
+    names = []
     for i, crop in enumerate(crops):
-        crop.save(os.path.join(parent_dir, img_name, f'{img_name}_{i}.png'))
+        saved_img = os.path.join(parent_dir, img_name, f'{img_name}_{i}.png')
+        crop.save(saved_img)
+        names.append(saved_img)
+    return names
 
 def main(img_path, crop='five', denom=2, rand_number=10, parent_dir=''):
     crops = get_crops(img_path, crop, denom, rand_number)
 
     img_name = os.path.basename(img_path).split('.')[0]
-    save_crops(crops, img_name, parent_dir)
+    return save_crops(crops, img_name, parent_dir)
 
 
 if __name__ == '__main__':
     img_path = sys.argv[1]
-    main(img_path)
+    print(main(img_path))

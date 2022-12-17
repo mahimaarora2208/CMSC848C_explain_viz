@@ -41,3 +41,14 @@
 		}"``
 
 5. Final output should be caption
+
+
+## Instructions for Manual (Five) Crop + Captioning
+
+0. Activate LIME environment
+1. ``python pre_caption_prep.py {PATH_TO_IMG}``
+2. Copy output for list of images to caption
+3. Deactivate LIME and activate GIT2 environment
+4. Run GIT2 command for multiple images (see 4b above) and use previous output  for `image_path`
+5. Use captions and pick essential ones for TTS
+6. Run TTS on merged final caption and save audio file
