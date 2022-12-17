@@ -42,7 +42,10 @@ def save_crops(crops, img_name, parent_dir):
     for i, crop in enumerate(crops):
         saved_img = os.path.join(parent_dir, img_name, f'{img_name}_{i}.png')
         crop.save(saved_img)
-        names.append(saved_img)
+
+        names.append(os.path.join('..',saved_img)) # .. prints out paths relative to Git2 dir
+        #makes for easy pasting when running captioner
+
     return names
 
 def main(img_path, crop='five', denom=2, rand_number=10, parent_dir=''):
@@ -50,7 +53,6 @@ def main(img_path, crop='five', denom=2, rand_number=10, parent_dir=''):
 
     img_name = os.path.basename(img_path).split('.')[0]
     return save_crops(crops, img_name, parent_dir)
-
 
 if __name__ == '__main__':
     img_path = sys.argv[1]
