@@ -15,6 +15,7 @@
 1. ``pip install -r git2-reqs.txt``
 2. ``python setup.py build develop``
 3. ``cd GenerativeImage2Text``
+
 4a. For one image,
  		
 		``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
