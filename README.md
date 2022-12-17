@@ -14,7 +14,9 @@
 0. Ensure image to caption is saved (i.e. save output from LIME)
 1. ``pip install -r git2-reqs.txt``
 2. ``python setup.py build develop``
-2. 	``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
+2. For one image,
+ 		
+		``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
       		
 		'image_path': 'PATH_TO_IMG' \
             	
@@ -26,7 +28,7 @@
 	  
 3. For multiple (n) images, 
 
-	``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
+		``AZFUSE_TSV_USE_FUSE=1 python -m generativeimage2text.inference -p "{'type': 'test_git_inference_single_image', \
      		
 		'image_path': ['PATH_TO_IMG_1', ... 'PATH_TO_IMG_N']\
         	
