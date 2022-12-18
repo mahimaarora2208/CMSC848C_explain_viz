@@ -2,6 +2,19 @@ from PIL import Image
 import os, sys
 
 from torchvision import transforms
+from torchvision.transforms.functional import crop
+
+def grid_crop(img_pil, denom):
+    h, w = img_pil.size
+    h_new = int(h/denom)
+    w_new = int(w/denom)
+
+    grid = []
+    for i in range(0, h, h_new):
+        for j in range(0, w, w_new):
+            grid.append(crop(img_pil, i, j, h_new, w_new))
+    
+    return grid
 
 def rand_crop(img_pil, denom=2):
     h = int(img_pil.size[0]/denom)
